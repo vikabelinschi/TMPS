@@ -1,4 +1,4 @@
-#TMPS
+# TMPS
 
 Laboratory number 2 is a Structural Patern representation, using a restaurant association.
 
@@ -53,4 +53,98 @@ class Adapter(Builder):
 		self.burger.cheese = "None"
 ```
 
+```python
+class VegetarianBurger(object):
+	def choose_bun(self):
+	    self.burger.bun = "Brioche"
+	    return self.burger.bun
+	def choose_patty(self):
+		self.burger.patty = "Veggy Patty"
+		return self.burger.patty
+	def choose_sauce(self):
+		self.burger.sauce = "Ketchup"
+		return self.burger.sauce
+```
+
+### Decorator
+The decorator in my code has the role to add options to the beverages. So now,the client may choose if he wants lemon in the water,
+coffee with milk or sugar in the tea.
+
+```python
+class WithSugar:
+  def __init__(self, Tea):
+    self.Tea = Tea
+    Tea.WithSugar = True
+  
+class WithMilk:
+  def __init__(self, Coffee):
+    self.Coffee = Coffee
+    Coffee.WithMilk = True
+
+
+class WithLemon:
+  def __init__(self, Water):
+    self.Water = Water
+    Water.WithLemon = True
+
+```
+
+### Bridge
+I used bridge to split the salad class, adding a dressing class with gives the client the posibility to choose mayo, olive oil or
+balsamic sauce Dressing.
+
+```python
+class Dressing:
+    def fill_Dressing(self):
+        pass
+
+class Salad:
+    def __init__(self, dressing):
+        self.dressing = dressing
+
+    def add_dressing(self):
+        pass
+
+class CaesarSalad(Salad):
+    def __init__(self, dressing):
+        super(CaesarSalad, self).__init__(dressing)
+
+    def add_dressing(self):
+        print("Caesar Salad with ", end="")
+        self.dressing.fill_Dressing()
+
+class TunaSalad(Salad):
+    def __init__(self, dressing):
+        super(TunaSalad, self).__init__(dressing)
+
+    def add_dressing(self):
+        print("Tuna Salad with ", end="")
+        self.dressing.fill_Dressing()
+
+class ShrimpSalad(Salad):
+    def __init__(self, dressing):
+        super(ShrimpSalad, self).__init__(dressing)
+
+    def add_dressing(self):
+        print("Shrimp Salad with ", end="")
+        self.dressing.fill_Dressing()
+
+class Mayo(Dressing):
+    def fill_Dressing(self):
+        print("mayo")
+
+class OliveOil(Dressing):
+    def fill_Dressing(self):
+        print("OliveOil")
+
+class BalsamicSauce(Dressing):
+    def fill_Dressing(self):
+        print("BalsamicSauce")
+```
+
+```python
+if self.answer == 1:
+             salad = CaesarSalad(Mayo())
+salad.add_dressing()
+```
 
