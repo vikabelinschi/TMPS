@@ -13,7 +13,7 @@ python3 Client.py
     2. Keep your files grouped (into packages/directories) by their responsibilities (an example project structure)
     3. Document your work in a separate markdown file according to the requirements presented below (the structure can be extended of course)
 
-##Theory:
+## Theory:
 
  In software engineering, the Structural Design Patterns are concerned with how classes and objects are composed to form larger structures. 
  Structural class patterns use inheritance to create a hierarchy of classes/abstractions, but the structural object patterns use composition 
@@ -36,8 +36,8 @@ and implementation—which can be developed independently of each other.
 Decorator: structural design pattern that lets you attach new behaviors to objects by placing these objects inside special wrapper objects that
 contain the behaviors.
 
-##Implementation
-###Adapter
+## Implementation
+### Adapter
 I used adapter to connect two incompatible interfaces : the burger Builder class and the VegetarianBurger class
 As you see, the Adapter class converts the data from the VegetarianBurger class, making it compatible to the Builder class.
 ```python
