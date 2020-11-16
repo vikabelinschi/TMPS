@@ -10,8 +10,10 @@ python3 Client.py
 ## Main Tasks:
 
  1. By extending your project, implement atleast 3 structural design patterns in your project
-    2. Keep your files grouped (into packages/directories) by their responsibilities (an example project structure)
-    3. Document your work in a separate markdown file according to the requirements presented below (the structure can be extended of course)
+ 
+ 2. Keep your files grouped (into packages/directories) by their responsibilities (an example project structure)
+  
+ 3. Document your work in a separate markdown file according to the requirements presented below (the structure can be extended of course)
 
 ## Theory:
 
@@ -21,13 +23,13 @@ python3 Client.py
 
     Some examples of from this category of design patterns are :
 
-Adapter
-Bridge
-Composite
-Decorator
-Facade
-Flyweight
-Proxy
+**Adapter**
+**Bridge**
+**Composite**
+**Decorator**
+**Facade**
+**Flyweight**
+**Proxy**
 
 I used 3 of the mentioned patterns:
 Adapter: structural design pattern that allows objects with incompatible interfaces to collaborate.
@@ -40,6 +42,9 @@ contain the behaviors.
 ### Adapter
 I used adapter to connect two incompatible interfaces : the burger Builder class and the VegetarianBurger class
 As you see, the Adapter class converts the data from the VegetarianBurger class, making it compatible to the Builder class.
+
+
+Adapter.py
 ```python
 class Adapter(Builder):
 	def choose_bun(self):
@@ -53,6 +58,7 @@ class Adapter(Builder):
 		self.burger.cheese = "None"
 ```
 
+VegetarianBurger.py
 ```python
 class VegetarianBurger(object):
 	def choose_bun(self):
@@ -67,9 +73,10 @@ class VegetarianBurger(object):
 ```
 
 ### Decorator
-The decorator in my code has the role to add options to the beverages. So now,the client may choose if he wants lemon in the water,
+The decorator in my code has the role to add options to the beverage classes. So now,the client may choose if he wants lemon in the water,
 coffee with milk or sugar in the tea.
 
+Decorator.py
 ```python
 class WithSugar:
   def __init__(self, Tea):
@@ -90,9 +97,10 @@ class WithLemon:
 ```
 
 ### Bridge
-I used bridge to split the salad class, adding a dressing class with gives the client the posibility to choose mayo, olive oil or
+I used bridge to split the salad class, adding a dressing class which gives the client the posibility to choose mayo, olive oil or
 balsamic sauce Dressing.
 
+Bridge.py
 ```python
 class Dressing:
     def fill_Dressing(self):
@@ -141,7 +149,7 @@ class BalsamicSauce(Dressing):
     def fill_Dressing(self):
         print("BalsamicSauce")
 ```
-
+Client.py
 ```python
 if self.answer == 1:
              salad = CaesarSalad(Mayo())
