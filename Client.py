@@ -5,6 +5,7 @@ from Structural.Bridge import *
 from Creational.VegetarianBurger import *
 from Structural.Adapter import *
 import time
+from Behavioral.Strategy import *
 
 class Waiter(object):
     def present_menu(self):
@@ -164,3 +165,16 @@ if __name__ == "__main__":
     waiter.present_menu()
     chosen_menu = int(input())
     waiter.choose_menu(chosen_menu)
+    print("How do you want to pay?")
+    print("1.Cash")
+    print("2.Card")
+    MenuPay.methods(Strategy)
+
+
+
+
+
+
+
+
+
